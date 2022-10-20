@@ -39,6 +39,12 @@ def play_game(word):
                 print("Correct! You're safe,", guess, "is in the word!")  #checks if correct guess
                 guessed_letters.append(guess)
                 word_as_list = list(word_execution)  #converts word into list to allow me to index into it
+                indices = [i for i, letter in enumerate(word) if letter == guess]
+                for index in indices:
+                    word_as_list[index] = guess
+                word_execution = "".join(word_as_list)  #Replaces underscore with letter guessed correctly
+                if "_" not in word_execution:
+                    guessed = True 
         elif len(guess) == len(word) and guess.isalpha():
 
         else:
