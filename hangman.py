@@ -122,3 +122,15 @@ def hangman_display(tries):
       |
 =========''']
     return phases[tries]
+
+
+def main():
+    word = obtain_word()
+    play(word)
+    while input("Are you brave enough to try again? (Y/N) ").upper == "Y":
+        word = obtain_word()
+        play(word)
+
+
+if __name__ == "__main__":
+    main()
