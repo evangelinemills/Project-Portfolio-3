@@ -22,7 +22,15 @@ def play_game(word):
     guessed_letters = []
     guessed_words = []
     tries = 6  #number of body parts on hangman = number of guesses
-    print("Lets Hang the Man!!")
+    print(f"""LETS PLAY
+ _     _   _____   _     _   _____    __   __    _____   _     _ 
+(_)   (_) (_____) (_)   (_) (_____)  (__)_(__)  (_____) (_)   (_)
+(_)___(_)(_)___(_)(__)_ (_)(_)  ___ (_) (_) (_)(_)___(_)(__)_ (_)
+(_______)(_______)(_)(_)(_)(_) (___)(_) (_) (_)(_______)(_)(_)(_)
+(_)   (_)(_)   (_)(_)  (__)(_)___(_)(_)     (_)(_)   (_)(_)  (__)
+(_)   (_)(_)   (_)(_)   (_) (_____) (_)     (_)(_)   (_)(_)   (_)
+""")
+
     print(hangman_display(tries))
     print(word_execution)
     print("\n")
