@@ -17,7 +17,7 @@ def play_game(word):
     As a correct letter is guessed it will replace
     the underscore with the guessed letter
     """
-    word_execution = "_" + len(word)  #displays underscores instead of letters
+    word_execution = "_" * len(word)  #displays underscores instead of letters
     guessed = False
     guessed_letters = []
     guessed_words = []
@@ -27,36 +27,36 @@ def play_game(word):
     print(word_execution)
     print("\n")
     while not guessed and tries > 0:
-        guess = input("Guess a LETTER or WORD: ")  #input field in terminal for guess
-        if len(guess) == 1 guess.isalpha():  #checks guess is alphabetic
-            if guess in guessed_letters:
-                print("You've already guessed this letter silly!!", guess)  #checks if already guessed
-            elif guess not in word:
-                print(guess, "is not in the word...watch out!")  #checks if guess not in word
+        guess = input("Guess a LETTER or WORD: ").upper()  #input for guess
+        if len(guess) == 1 and guess.isalpha():  #checks guess is alphabetic
+            if guess in guessed_letters:  #checks if already guessed
+                print("You've already guessed this letter silly!!", guess)  
+            elif guess not in word:  #checks if guess not in word
+                print(guess, "is not in the word...watch out!")  
                 tries -= 1  #one less try
-                guessed_letters.append(guess)  #adds guessed letter to list of guessed letters
-            else:
-                print("Correct! You're safe,", guess, "is in the word!")  #checks if correct guess
+                guessed_letters.append(guess)  #adds guessed letter to list
+            else:  #checks if correct guess
+                print("Correct! You're safe,", guess, "is in the word!")  
                 guessed_letters.append(guess)
-                word_as_list = list(word_execution)  #converts word into list to allow me to index into it
+                word_as_list = list(word_execution)  #converts word into list
                 indices = [i for i, letter in enumerate(word) if letter == guess]
                 for index in indices:
                     word_as_list[index] = guess
-                word_execution = "".join(word_as_list)  #Replaces underscore with letter guessed correctly
+                word_execution = "".join(word_as_list)  #Replaces _ with letter
                 if "_" not in word_execution:
                     guessed = True 
-        elif len(guess) == len(word) and guess.isalpha():  #Checks for correctly guessed words
+        elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print("You've guessed the word!", guess)
             elif guess != word:
-                print("Oh No!", guess , "is not the word!")
+                print("Oh No!", guess , " is not the word!")
                 tries -= 1
                 guessed_words.append(guess)
             else:
                 guessed = True  #Checks for correct guess
                 word_execution = word
         else:
-        print("Not a valid guess!")
+            print("Not a valid guess!")
         print(hangman_display(tries))
         print(word_execution)
         print("\n")
@@ -71,65 +71,80 @@ def hangman_display(tries):
     Phase images of hangman for user feedback
     A new phase appears after each incorrect guess
     """
-    phases = ['''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', '''
+    phases = [
+        # final stage: head, torso, both arms and both legs
+'''
   +---+
   |   |
   O   |
  /|\  |
  / \  |
       |
-=========''']
+=========''',
+# head, torso, both arms and one leg
+'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', 
+# head, torso and both arms
+'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''',
+# head, torso and one arm
+'''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', 
+# head and torso
+'''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''',
+# head
+'''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''',
+# Initial state: empty
+        '''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''',
+]
     return phases[tries]
 
 
 def main():
     word = obtain_word()
-    play(word)
+    play_game(word)
     while input("Are you brave enough to try again? (Y/N) ").upper == "Y":
         word = obtain_word()
-        play(word)
+        play_game(word)
 
 
 if __name__ == "__main__":
