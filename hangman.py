@@ -45,13 +45,25 @@ def play_game(word):
                 word_execution = "".join(word_as_list)  #Replaces underscore with letter guessed correctly
                 if "_" not in word_execution:
                     guessed = True 
-        elif len(guess) == len(word) and guess.isalpha():
-
+        elif len(guess) == len(word) and guess.isalpha():  #Checks for correctly guessed words
+            if guess in guessed_words:
+                print("You've guessed the word!", guess)
+            elif guess != word:
+                print("Oh No!", guess , "is not the word!")
+                tries -= 1
+                guessed_words.append(guess)
+            else:
+                guessed = True  #Checks for correct guess
+                word_execution = word
         else:
-            print("Not a valid guess!")
+        print("Not a valid guess!")
         print(hangman_display(tries))
         print(word_execution)
         print("\n")
+    if guessed:
+        print("Phew! Well done, you've survived a hanging today!")
+    else:
+        print("Sorry, your time is up, youre out of luck! The word was " + word)
 
 
 def hangman_display(tries):
