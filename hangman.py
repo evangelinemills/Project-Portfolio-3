@@ -58,7 +58,7 @@ def play_game(word):
             if guess in guessed_letters:  #checks if already guessed
                 print(Fore.LIGHTRED_EX + "Oh dear! You've already guessed this letter silly!!")  
             elif guess not in word:  #checks if guess not in word
-                print(Fore.LIGHTYELLOW_EX + guess, "is not in the word...watch out! Try again!")  
+                print(Fore.LIGHTYELLOW_EX + guess, Fore.LIGHTYELLOW_EX + "is not in the word...watch out! Try again!")  
                 tries -= 1  #one less try
                 guessed_letters.append(guess)  #adds guessed letter to list
             else:  #checks if correct guess
@@ -75,7 +75,7 @@ def play_game(word):
             if guess in guessed_words:
                 print(Fore.CYAN + "You've guessed the word!", guess)
             elif guess != word:
-                print(Fore.BLUE + "Oh No!", guess , " is not the word!")
+                print(Fore.BLUE + "Oh No!", guess , Fore.BLUE + "is not the word!")
                 tries -= 1
                 guessed_words.append(guess)
             else:
@@ -188,6 +188,8 @@ def main():
     while input(Fore.LIGHTYELLOW_EX + "Are you brave enough to try again? (Y/N) ").upper == "Y":
         word = obtain_word()
         play_game(word)
+    else:
+        os.system("clear")
 
 
 if __name__ == "__main__":
