@@ -41,20 +41,20 @@ def play_game(word):
         elif difficulty == "H":
             tries = 6
             print("You've chosen Hard, you have ", tries, "tries.")
-            difficulty = True
+            difficulty_level = True
         else:
             print(difficulty, "is not a difficulty!")
 
     print(hangman_display(tries))
     print(word_execution)
-    print("\n")
+    print(" \n ")
     while not guessed and tries > 0:
         guess = input("Guess a LETTER or WORD: ").upper()  #input for guess
         if len(guess) == 1 and guess.isalpha():  #checks guess is alphabetic
             if guess in guessed_letters:  #checks if already guessed
-                print("You've already guessed this letter silly!!", guess)  
+                print("Oh dear! You've already guessed this letter silly!!")  
             elif guess not in word:  #checks if guess not in word
-                print(guess, "is not in the word...watch out!")  
+                print(guess, "is not in the word...watch out! Try again!")  
                 tries -= 1  #one less try
                 guessed_letters.append(guess)  #adds guessed letter to list
             else:  #checks if correct guess
@@ -83,9 +83,18 @@ def play_game(word):
         print(word_execution)
         print("\n")
     if guessed:
-        print("Phew! Well done, you've survived a hanging today!")
+        print("""Phew! You've survived a hanging today!
+                                                                         _ 
+ _       _  ______  _       _          _____    _____   _     _  ______ (_)
+(_)  _  (_)(______)(_)     (_)        (_____)  (_____) (_)   (_)(______)(_)
+(_) (_) (_)(_)__   (_)     (_)        (_)  (_)(_)   (_)(__)_ (_)(_)__   (_)
+(_) (_) (_)(____)  (_)     (_)        (_)  (_)(_)   (_)(_)(_)(_)(____)  (_)
+(_)_(_)_(_)(_)____ (_)____ (_)____    (_)__(_)(_)___(_)(_)  (__)(_)____  _ 
+ (__) (__) (______)(______)(______)   (_____)  (_____) (_)   (_)(______)(_)
+                                                                           
+    """)
     else:
-        print("Sorry, your time is up, youre out of luck! The word was " + word)
+        print("Sorry, your time is up, youre out of luck! The word was " + word, "!")
 
 
 def hangman_display(tries):
@@ -102,7 +111,15 @@ def hangman_display(tries):
  /|\  |
  / \  |
       |
-=========''',
+=========
+                                                                           _ 
+  _____    _____    __   __   ______      _____   _     _  ______  _____  (_)
+ (_____)  (_____)  (__)_(__) (______)    (_____) (_)   (_)(______)(_____) (_)
+(_)  ___ (_)___(_)(_) (_) (_)(_)__      (_)   (_)(_)   (_)(_)__   (_)__(_)(_)
+(_) (___)(_______)(_) (_) (_)(____)     (_)   (_)(_)   (_)(____)  (_____) (_)
+(_)___(_)(_)   (_)(_)     (_)(_)____    (_)___(_) (_)_(_) (_)____ ( ) ( )  _ 
+ (_____) (_)   (_)(_)     (_)(______)    (_____)   (___)  (______)(_)  (_)(_)
+''',
 # head, torso, both arms and one leg
 '''
   +---+
