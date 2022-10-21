@@ -1,5 +1,6 @@
 import random  #imports random library
 from words import list_of_words  #imports the list of words from words.py
+import os
 
 
 def obtain_word():
@@ -34,6 +35,7 @@ def play_game(word):
     difficulty_level = False
     while difficulty_level is False:
         difficulty = input("""Please select a level: E = Easy, H = Hard: """).upper()
+        os.system("clear")
         if difficulty == "E":
             tries = 6
             print("You've chosen Easy, you have ", tries, "tries.")
