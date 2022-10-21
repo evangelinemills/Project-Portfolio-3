@@ -30,6 +30,20 @@ def play_game(word):
 (_)   (_)(_)   (_)(_)  (__)(_)___(_)(_)     (_)(_)   (_)(_)  (__)
 (_)   (_)(_)   (_)(_)   (_) (_____) (_)     (_)(_)   (_)(_)   (_)
 """)
+    
+    difficulty_level = False
+    while difficulty_level is False:
+        difficulty = input("""Please select a level: E = Easy, H = Hard: """).upper()
+        if difficulty == "E":
+            tries = 6
+            print("You've chosen Easy, you have ", tries, "tries.")
+            difficulty_level = True
+        elif difficulty == "H":
+            tries = 6
+            print("You've chosen Hard, you have ", tries, "tries.")
+            difficulty = True
+        else:
+            print(difficulty, "is not a difficulty!")
 
     print(hangman_display(tries))
     print(word_execution)
