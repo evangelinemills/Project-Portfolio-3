@@ -1,6 +1,8 @@
 import random  #imports random library
 from words import list_of_words  #imports the list of words from words.py
 import os
+import colorama
+from colorama import Fore, Back, Style
 
 
 def obtain_word():
