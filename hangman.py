@@ -98,7 +98,7 @@ def play_game(word):
                                                                            
     """)
     else:
-        print(Fore.LIGHTWHITE_EX + "Sorry, your time is up, youre out of luck! The word was " + word, "!")
+        print(Fore.LIGHTWHITE_EX + "Sorry, your time is up, you're out of luck! The word was " + word, "!")
 
 
 def hangman_display(tries):

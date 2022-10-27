@@ -73,12 +73,76 @@ The game can be found [here]().
 - Verdict: Only E and H were accepted so it was a success.
 ----
 - The user should only be able to guess a single letter or a word that equals the length of the word they are tyring to guess. Any number, punctuation mark or word that is longer or shorter than the one to be guessed ahould not be accepted. 
-- Test: After starting the game and selecting a difficulty, I input words that were longer or shorter than the length of word I was tying to guess, i input numbers and I input symbols.
+- Test: After starting the game and selecting a difficulty, I input words that were longer or shorter than the length of word I was tying to guess, I input numbers and I input symbols.
 - Result: The game did not allow the player to add any symbols, numbers or word that did not equal the correct length. It told the user their input was incorrect and asked them to guess again. 
 - Verdict: Only singular letters or words of the correct length were accepted as guesses and allowed the game to contine. The test was a success.
 ----
 - The user should only be allowed to guess each letter/word once. If it is already guessed the computer should tell them and they do not lose a life.
-- Test:
+- Test: Whilst playing the game I repeatedly input the same letter/word. 
+- Result: The computer prompted me that I had already guessed that letter/word and should try again. No life was lost.
+- Verdict: This test was a success as the game prompted the user with a message and no life was lost.
+----
+- When the user loses a game, "Game Over" should appear with a message to inform the player of the word they were trying to guess. 
+- Test: I played the game multiple time trying to guess incorrectly so as I would lose. 
+- Result: Each time I lost the message popped up correctly at the end of the game. 
+- Verdict: The test was a success. The message appeared correctly at the correct point in the game.
+----
+- When the user wins a game, "Well Done" should appear to congratulate the player.
+- Test: I played the game multiple times trying to win.
+- Result: By winning as many times as I could, the message came up at the end of the game.
+- Verdict: The test was a success. Each time I won the game the correct message was displayed at the correct time. 
+----
+- When the user finishes the game, whether they win or lose, the game should ask them if they want to play again. The player can input Y for yes or N for no. If they select Y the game should restart, if they select N the terminal clears and the game ends. 
+- Test: By finishing the game repeatedly I input Y or N to test the outcome. 
+- Result: Y restated the game, N cleared the terminal and any other key was not accepted. 
+- Verdict: The test was a success as the appropriate key carried out the correct function. 
+
+### Bugs
+
+
+## Technologies
+----
+### Languages
+- [Python:](https://www.python.org/) This whole project was written using Python.
+- [Markdown:](https://www.markdownguide.org/basic-syntax/) The read me is written using Markdown.
+
+### Environment
+- [GitHub:](https://github.com/) was used to host the code.
+- [GitPod:](https://www.gitpod.io/?utm_source=googleads&utm_medium=search&utm_campaign=dynamic_search_ads&utm_id=16501579379&utm_content=dsa&gclid=EAIaIQobChMIn6TCrsyA-wIVDNPtCh319wDpEAAYASAAEgKK2vD_BwE) was used to write the code.
+- [Heroku:](https://id.heroku.com/login) was the cloud hosting platform used to deploy this project.
+
+### Packages
+- [Colorama:](https://pypi.org/project/colorama/) was used to create coloured text and images in the game.
+
+### Other
+- [Graffiti:](http://patorjk.com/software/taag/#p=display&h=1&v=2&f=Pawp&t=Hangman)was used for the large text images in the game.
+
+## Deployment
+----
+- I commited and pusehd all code fot the game to GitHub from GitPod.
+- I created an account on [Heroku](https://id.heroku.com/login).
+- I clicked on 'New' and clicked 'Create New App'.
+- I then chose the correct region and named my app. 
+- In settings I aorted out the Buildpacks for everything to work.
+- I then clicked on the deploy page and linked my GitHub repo with the Heroku app.
+- I then deployed the branch at the bottom of the page, ensuring no errors occured.
+- I enabled automatic deploys so if I edit and push the code the Heroku automatically updates and redoploys.
+- I then opened the game on Heroku to ensure it functions efficiently.
+
+## References
+----
+- I watched multiple tutotials on YouTube to undertand the basics of Hangman code in Python. The [Kite](https://www.youtube.com/watch?v=m4nEnsavl6w) was especially helpful and helped me to understand the what and why of my code. 
+- I used [Random Words Generator](https://randomwordgenerator.com) to get my words for the game. I was able to tailor the length and chose 50 words for each length.
+
+## Acknowledgements
+----
+- I'd like to thank my mentor Richard Wells for all of the help and support throughout.
+- Thank you to my family and friends for testing and feedback.
+- Thank you to my peers on Slack for always being supportive. 
+
+Evangeline Mills 2022
+
+
 
 
 
