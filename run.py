@@ -108,7 +108,7 @@ def hangman_display(tries):
     """
     phases = [
         # final stage: head, torso, both arms and both legs
-'''
+Fore.GREEN + '''
   +---+
   |   |
   O   |
@@ -125,7 +125,7 @@ def hangman_display(tries):
  (_____) (_)   (_)(_)     (_)(______)    (_____)   (___)  (______)(_)  (_)(_)
 ''',
 # head, torso, both arms and one leg
-'''
+Fore.LIGHTBLUE_EX + '''
   +---+
   |   |
   O   |
@@ -134,7 +134,7 @@ def hangman_display(tries):
       |
 =========''', 
 # head, torso and both arms
-'''
+Fore.LIGHTMAGENTA_EX + '''
   +---+
   |   |
   O   |
@@ -143,7 +143,7 @@ def hangman_display(tries):
       |
 =========''',
 # head, torso and one arm
-'''
+Fore.LIGHTYELLOW_EX + '''
   +---+
   |   |
   O   |
@@ -152,7 +152,7 @@ def hangman_display(tries):
       |
 =========''', 
 # head and torso
-'''
+Fore.CYAN + '''
   +---+
   |   |
   O   |
@@ -161,7 +161,7 @@ def hangman_display(tries):
       |
 =========''',
 # head
-'''
+Fore.BLUE + '''
   +---+
   |   |
   O   |
@@ -170,7 +170,7 @@ def hangman_display(tries):
       |
 =========''',
 # Initial state: empty
-        '''
+Fore.LIGHTGREEN_EX + '''
   +---+
   |   |
       |
