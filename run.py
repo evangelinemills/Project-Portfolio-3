@@ -56,7 +56,7 @@ def play_game(word):
         guess = input(Fore.LIGHTRED_EX + "Guess a LETTER or WORD: ").upper()  #input for guess
         if len(guess) == 1 and guess.isalpha():  #checks guess is alphabetic
             if guess in guessed_letters:  #checks if already guessed
-                print(Fore.LIGHTRED_EX + "Oh dear! You've already guessed this letter silly!!")  
+                print(Fore.CYAN + "Oh dear! You've already guessed this letter silly!!")  
             elif guess not in word:  #checks if guess not in word
                 print(Fore.LIGHTYELLOW_EX + guess, Fore.LIGHTYELLOW_EX + "is not in the word...watch out! Try again!")  
                 tries -= 1  #one less try

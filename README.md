@@ -3,47 +3,48 @@
 
 Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku.
 
-The game can be found [here]().
+The game can be found [here](https://hangman-p3-evie.herokuapp.com/).
 
-(Am I Responsive Images)
+<img src="assets/images/am-i-responsive.jpg">
 
 ## How to play
 ----
-- The game begins with a welcome message. The image was generated using the Ascii graffiti generator [PatorJK.](http://patorjk.com/software/taag/#p=display&h=1&v=2&f=Pawp&t=Hangman). I ensure the style is easy to read.
+- The game begins with a welcome message. The image was generated using the Ascii graffiti generator [PatorJK.](http://patorjk.com/software/taag/#p=display&h=1&v=2&f=Pawp&t=Hangman) I ensured the style is easy to read.
 
-(IMAGE)
+<img src="assets/images/welcome-message.jpg">
 
-- The game then asks the user to choose a difficulty level. They can select Easy by pressing E or Hard by pressing H on the keyboard. Easy gives the user 6 tries and Hard gives the user 4 tries, to guess the word. If the user tries to input any other key the game will not accept it and will ask the question again. 
+- The game then asks the user to choose a difficulty level. They can select Easy by pressing "E" or Hard by pressing "H" on the keyboard. Easy gives the user 6 tries and Hard gives the user 4 tries, to guess the word. If the user tries to input any other key the game will not accept it and will ask the question again. 
 
-(IMAGE)
+<img src="assets/images/choose-difficulty.jpg">
+<img src="assets/images/choose-difficulty-h.jpg">
+<img src="assets/images/not-a-difficulty.jpg">
 
-- The game will then provide an image of the empty gallows with a line of underscores underneath. This shows the length of the word. The game asks the user to guess a letter or word.
- 
- (IMAGE)
+- The game provides an image of the empty gallows with a line of underscores underneath it. This shows the length of the word. The game asks the user to guess a letter or word.
 
- - The user begins by picking a letter. If they guess correct, the letter appears on screen in its respective place in the word. The console also provides positive feedback telling the user they are correct.
+- The user begins by picking a letter. If they guess correct, the letter appears on screen in its respective place in the word. The console also provides positive feedback telling the user they are correct. It then prompts the user to input another letter.
 
- (IMAGE)
+<img src="assets/images/correct-guess.jpg">
 
- - The player continues to guess letters. If incorrect, a body part appears in the galows and the console feeds back to the user saying the letter is not in the word and to try again,
+- The player continues to guess letters. If incorrect, a body part appears in the galows and the console feeds back to the user saying the letter is not in the word and to try again.
 
- (IMAGE)
+<img src="assets/images/incorrect-guess.jpg">
 
- - If the user should guess a letter again, that they already guessed, the comsole will tell them they already guessed that letter. The player does not lose a life and is prompted to guess again.
+- If the user should guess a letter again, that they already guessed, the console will tell them they already guessed that letter. The player does not lose a life and is prompted to guess again.
 
- (IMAGE)
+<img src="assets/images/same-guess.jpg">
 
- - If the player inputs a guess that is not a letter or word. The computer will feedback that it is not a valid guess and try again. The plater will not lose a life. 
+- If the player inputs a guess that is not a letter or word. The computer will feedback that it is not a valid guess and try again. The player will not lose a life. 
 
- (IMAGE)
+<img src="assets/images/number-guess.jpg">
 
- - If the player guesses each letter correctly or figures out the word and types it in before they run out of tries and all the body parts appear in the gallows, they are congratulated for guessing the word correctly.
+- If the player guesses each letter correctly or figures out the word and types it in before they run out of tries and all the body parts appear in the gallows, they are congratulated for guessing the word correctly.
 
- (IMAGE)
+<img src="assets/images/well-done.jpg">
 
- - If the player runs out of tries and they don't guess the word, they get a game over message and the computer reveales the word. The user is asked whether they would like to play again after each game. 
+- If the player runs out of tries and they don't guess the word, they get a game over message and the computer reveales the word. The user is asked whether they would like to play again after each game. 
 
- (IMAGE)
+<img src="assets/images/game-over.jpg">
+
 
 
 ## Features
