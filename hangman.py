@@ -43,7 +43,7 @@ def play_game(word):
             print(Fore.LIGHTMAGENTA_EX + "You've chosen Easy, you have ", tries, "tries.")
             difficulty_level = True
         elif difficulty == "H":
-            tries = 6
+            tries = 4
             print(Fore.LIGHTMAGENTA_EX + "You've chosen Hard, you have ", tries, "tries.")
             difficulty_level = True
         else:
@@ -82,10 +82,10 @@ def play_game(word):
                 guessed = True  #Checks for correct guess
                 word_execution = word
         else:
-            print(Fore.LIGHTBLUE_EX + "Not a valid guess!")
+            print("Not a valid guess!")
         print(hangman_display(tries))
         print(word_execution)
-        print("\n")
+        print(" \n ")
     if guessed:
         print(Fore.BLUE + """Phew! You've survived a hanging today!
                                                                          _ 
