@@ -1,9 +1,10 @@
-import random  #imports random library
-from words import list_of_words  #imports the list of words from words.py
+import random  
+from words import list_of_words  
 import os
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore
 colorama.init(autoreset=True)
+
 
 def obtain_word():
     """
@@ -20,11 +21,11 @@ def play_game(word):
     As a correct letter is guessed it will replace
     the underscore with the guessed letter
     """
-    word_execution = "_" * len(word)  #displays underscores instead of letters
+    word_execution = "_" * len(word) 
     guessed = False
     guessed_letters = []
     guessed_words = []
-    tries = 6  #number of body parts on hangman = number of guesses
+    tries = 6  
     print(Fore.CYAN + """LETS PLAY
  _     _   _____   _     _   _____    __   __    _____   _     _ 
 (_)   (_) (_____) (_)   (_) (_____)  (__)_(__)  (_____) (_)   (_)
@@ -33,7 +34,7 @@ def play_game(word):
 (_)   (_)(_)   (_)(_)  (__)(_)___(_)(_)     (_)(_)   (_)(_)  (__)
 (_)   (_)(_)   (_)(_)   (_) (_____) (_)     (_)(_)   (_)(_)   (_)
 """)
-    
+
     difficulty_level = False
     while difficulty_level is False:
         difficulty = input(Fore.LIGHTGREEN_EX + """Please select a level: E = Easy, H = Hard: """).upper()
@@ -53,33 +54,33 @@ def play_game(word):
     print(word_execution)
     print(" \n ")
     while not guessed and tries > 0:
-        guess = input(Fore.LIGHTRED_EX + "Guess a LETTER or WORD: ").upper()  #input for guess
-        if len(guess) == 1 and guess.isalpha():  #checks guess is alphabetic
-            if guess in guessed_letters:  #checks if already guessed
+        guess = input(Fore.LIGHTRED_EX + "Guess a LETTER or WORD: ").upper()  
+        if len(guess) == 1 and guess.isalpha():  
+            if guess in guessed_letters: 
                 print(Fore.CYAN + "Oh dear! You've already guessed this letter silly!!")  
-            elif guess not in word:  #checks if guess not in word
+            elif guess not in word:  
                 print(Fore.LIGHTYELLOW_EX + guess, Fore.LIGHTYELLOW_EX + "is not in the word...watch out! Try again!")  
-                tries -= 1  #one less try
-                guessed_letters.append(guess)  #adds guessed letter to list
-            else:  #checks if correct guess
+                tries -= 1  
+                guessed_letters.append(guess)  
+            else:  
                 print(Fore.LIGHTMAGENTA_EX + "Correct! You're safe,", guess, "is in the word!")  
                 guessed_letters.append(guess)
-                word_as_list = list(word_execution)  #converts word into list
+                word_as_list = list(word_execution) 
                 indices = [i for i, letter in enumerate(word) if letter == guess]
                 for index in indices:
                     word_as_list[index] = guess
-                word_execution = "".join(word_as_list)  #Replaces _ with letter
+                word_execution = "".join(word_as_list) 
                 if "_" not in word_execution:
                     guessed = True 
         elif len(guess) == len(word) and guess.isalpha():
             if guess in guessed_words:
                 print(Fore.CYAN + "You've guessed the word!", guess)
             elif guess != word:
-                print(Fore.BLUE + "Oh No!", guess , Fore.BLUE + "is not the word!")
+                print(Fore.BLUE + "Oh No!" , guess , Fore.BLUE + "is not the word!")
                 tries -= 1
                 guessed_words.append(guess)
             else:
-                guessed = True  #Checks for correct guess
+                guessed = True  
                 word_execution = word
         else:
             print("Not a valid guess!")
