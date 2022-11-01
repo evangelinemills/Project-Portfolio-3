@@ -1,7 +1,7 @@
 # HANGMAN
 # Portfolio Project 3
 
-Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku. It is a fun game aimed at any english speaking individual or english student.
+Hangman is a Python terminal game, which runs in the Code Institute mock terminal on Heroku. It is a fun game aimed at any english speaking individual or english student. This game can be played at any time for fun or as a brain game. 
 
 The game can be found [here](https://hangman-p3-evie.herokuapp.com/).
 
@@ -45,7 +45,11 @@ The game can be found [here](https://hangman-p3-evie.herokuapp.com/).
 
 <img src="assets/images/game-over.jpg">
 
+## Flowchart
 
+This is my initail plan for the game. Some feature have changed as i developed the game.
+
+<img src="assets/images/flow-chart.jpg">
 
 ## Features
 ----
