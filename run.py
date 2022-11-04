@@ -38,17 +38,19 @@ def play_game(word):
     difficulty_level = False
     while difficulty_level is False:
         difficulty = input(Fore.LIGHTGREEN_EX +
-            """Please select a level: E = Easy, H = Hard: """).upper()
+                           """Please select a level:
+                           E = Easy,
+                           H = Hard: """).upper()
         os.system("clear")
         if difficulty == "E":
             tries = 6
             print(Fore.LIGHTMAGENTA_EX +
-                "You've chosen Easy, you have ", tries, "tries.")
+                  "You've chosen Easy, you have ", tries, "tries.")
             difficulty_level = True
         elif difficulty == "H":
             tries = 4
             print(Fore.LIGHTMAGENTA_EX +
-                "You've chosen Hard, you have ", tries, "tries.")
+                  "You've chosen Hard, you have ", tries, "tries.")
             difficulty_level = True
         else:
             print(Fore.LIGHTYELLOW_EX + difficulty, "is not a difficulty!")
@@ -61,15 +63,15 @@ def play_game(word):
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print(Fore.CYAN +
-                    "Oh dear! You've already guessed this letter silly!!")
+                      "Oh dear! You've already guessed this letter silly!!")
             elif guess not in word:
                 print(Fore.LIGHTYELLOW_EX + guess, Fore.LIGHTYELLOW_EX +
-                    "is not in the word...watch out! Try again!")
+                      "is not in the word...watch out! Try again!")
                 tries -= 1
                 guessed_letters.append(guess)
             else:
                 print(Fore.LIGHTMAGENTA_EX +
-                    "Correct! You're safe,", guess, "is in the word!")
+                      "Correct! You're safe,", guess, "is in the word!")
                 guessed_letters.append(guess)
                 word_as_list = list(word_execution)
                 ind = [i for i, letter in enumerate(word) if letter == guess]
@@ -83,7 +85,7 @@ def play_game(word):
                 print(Fore.CYAN + "You've guessed the word!", guess)
             elif guess != word:
                 print(Fore.BLUE +
-                    "Oh No!", guess, Fore.BLUE + "is not the word!")
+                      "Oh No!", guess, Fore.BLUE + "is not the word!")
                 tries -= 1
                 guessed_words.append(guess)
             else:
@@ -106,7 +108,8 @@ def play_game(word):
     """)
     else:
         print(Fore.LIGHTWHITE_EX +
-            "Sorry, your time is up, you're out of luck! The word was " + word, "!")
+              "Sorry, your time is up, you're out of luck! The word was "
+              + word, "!")
 
 
 def hangman_display(tries):
@@ -115,7 +118,7 @@ def hangman_display(tries):
     A new phase appears after each incorrect guess
     """
     phases = [
-Fore.GREEN + '''
+             Fore.GREEN + '''
   +---+
   |   |
   O   |
@@ -131,7 +134,7 @@ Fore.GREEN + '''
 (_)___(_)(_)   (_)(_)     (_)(_)____    (_)___(_) (_)_(_) (_)____ ( ) ( )  _
  (_____) (_)   (_)(_)     (_)(______)    (_____)   (___)  (______)(_)  (_)(_)
 ''',
-Fore.LIGHTBLUE_EX + '''
+             Fore.LIGHTBLUE_EX + '''
   +---+
   |   |
   O   |
@@ -139,7 +142,7 @@ Fore.LIGHTBLUE_EX + '''
  /    |
       |
 =========''',
-Fore.LIGHTMAGENTA_EX + '''
+             Fore.LIGHTMAGENTA_EX + '''
   +---+
   |   |
   O   |
@@ -147,7 +150,7 @@ Fore.LIGHTMAGENTA_EX + '''
       |
       |
 =========''',
-Fore.LIGHTYELLOW_EX + '''
+             Fore.LIGHTYELLOW_EX + '''
   +---+
   |   |
   O   |
@@ -155,7 +158,7 @@ Fore.LIGHTYELLOW_EX + '''
       |
       |
 =========''',
-Fore.CYAN + '''
+             Fore.CYAN + '''
   +---+
   |   |
   O   |
@@ -163,7 +166,7 @@ Fore.CYAN + '''
       |
       |
 =========''',
-Fore.BLUE + '''
+             Fore.BLUE + '''
   +---+
   |   |
   O   |
@@ -171,7 +174,7 @@ Fore.BLUE + '''
       |
       |
 =========''',
-Fore.LIGHTGREEN_EX + '''
+             Fore.LIGHTGREEN_EX + '''
   +---+
   |   |
       |
@@ -179,7 +182,7 @@ Fore.LIGHTGREEN_EX + '''
       |
       |
 =========''',
-]
+             ]
     return phases[tries]
 
 
@@ -190,7 +193,7 @@ def main():
     word = obtain_word()
     play_game(word)
     while input(Fore.LIGHTYELLOW_EX +
-            "Are you brave enough to try again? (Y/N) ").upper() == "Y":
+                "Are you brave enough to try again? (Y/N) ").upper() == "Y":
         word = obtain_word()
         play_game(word)
     exit()
