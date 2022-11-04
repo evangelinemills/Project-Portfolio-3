@@ -69,8 +69,9 @@ This is my initial plan for the game. Some features have changed as I developed 
 ## Testing
 ----
 ### Code Validation
-- I tested my code using [Python Checker.](https://www.pythonchecker.com/) I had to fix some minor spacing issues otherwise it passed.
- 
+- I tested my code using pycodestyle that i installed into GitHub. I had to fix 'line too long' and 'whitespace' errors. Otherwise there were no errors detected.
+<img src="assets/images/errors.jpg">
+
 ### Manual Testing
 - At the start of the game the player must select a level. E for Easy or H for Hard. These are the only two letters the computer should accept.
 - Test: To test this, I input the E and H individually, both upper and lower case. I then tried other letters, words, numbers and punctuation keys to see if the game would continue.
@@ -149,3 +150,5 @@ This is my initial plan for the game. Some features have changed as I developed 
 - I'd like to thank my mentor Richard Wells for all of the help and support throughout.
 - Thank you to my family and friends for testing and feedback.
 - Thank you to my peers on Slack for always being supportive.
+
+Evangeline MIlls 2022
